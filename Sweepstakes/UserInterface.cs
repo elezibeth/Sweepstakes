@@ -14,6 +14,9 @@ namespace Sweepstakes
         public UserInterface()
         {
             array = new string[100];
+            AddOptionsToArray();
+            IntroScreen();
+
         }
 
         public void IntroScreen()
@@ -45,6 +48,12 @@ namespace Sweepstakes
             string marketingFirmName = Console.ReadLine();
             MarketingFirm mktfrm = new MarketingFirm(marketingFirmName);
             //save mktfrm;
+        }
+        public void AddOptionsToArray()
+        {
+            array[0] = "Create a marketing firm";
+            //array[1]
+
         }
 
     }

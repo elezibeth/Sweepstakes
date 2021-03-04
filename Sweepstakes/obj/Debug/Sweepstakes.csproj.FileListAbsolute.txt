@@ -1,0 +1,2 @@
+C:\Users\elezibeth\source\repos\Sweepstakes\Sweepstakes\obj\Debug\Sweepstakes.csprojAssemblyReference.cache
+C:\Users\elezibeth\source\repos\Sweepstakes\Sweepstakes\obj\Debug\Sweepstakes.csproj.CoreCompileInputs.cache
