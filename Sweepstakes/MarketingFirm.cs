@@ -10,10 +10,12 @@ namespace Sweepstakes
     {
 
         //members
+        public string name;
 
         //ctr
-        public MarketingFirm()
+        public MarketingFirm(string name)
         {
+            this.name = name;
 
         }
 
@@ -22,7 +24,7 @@ namespace Sweepstakes
 
         public Sweepstakes CreateASweepstakes(ISweepstakesManager manager)//add note here about dependency injection
         {
-            Sweepstakes sweepstakes = GetSweepstakes(stack);
+            Sweepstakes sweepstakes =  GetSweepstakes(stack);
             return sweepstakes;
         }
     }
