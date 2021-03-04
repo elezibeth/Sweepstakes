@@ -16,6 +16,7 @@ namespace Sweepstakes
             sweepStack = new Stack<Sweepstakes>();
             this.name = name;
             
+            
 
         }
         //methods

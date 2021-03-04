@@ -8,16 +8,14 @@ namespace Sweepstakes
 {
     class SweepstakesQueueManager : ISweepstakesManager
     {
-        
+
         Queue<Sweepstakes> sweepQueue;
         public string name;
 
         public SweepstakesQueueManager(string name)
         {
             sweepQueue = new Queue<Sweepstakes>();
-               
             this.name = name;
-            
         }
 
         public void InsertSweepstakes(Sweepstakes sweepstake)
@@ -27,13 +25,43 @@ namespace Sweepstakes
 
         public Sweepstakes GetSweepstakes()
         {
-            Sweepstakes sweepstakes = sweepQueue.Dequeue();
-            return sweepstakes;
+            Sweepstakes sweep = sweepQueue.Dequeue();
+            return sweep;
         }
-        //methods
-
-        //enqueue()add
-
-        //Dequeue() remove
     }
 }
+        
+            
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+    
+
+
+    
+

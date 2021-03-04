@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    class UserInterface
+    public class UserInterface
     {
         //members
         string[] array;
@@ -110,7 +110,13 @@ namespace Sweepstakes
         }
         public void CreateASweepstakes()//-------------------------------------------------------------------------------------------------------------------------------
         {
-            mktgfm.
+            Console.WriteLine("Would you like to use the Sweepstakes stack manager or the queue manager? type '1' for stack and '2' for queue.");
+            string input = Console.ReadLine();
+            switch (input)
+            {
+                case "1":
+
+            }
         }
         public void ManageSweepstakes()
         {
@@ -132,6 +138,10 @@ namespace Sweepstakes
             //    $"3. Pick a winner?");
             marketingFirms[number].sweepstakes[number1].
 
+        }
+        public static OutPutText(string text)
+        {
+            Console.WriteLine(text);
         }
         public void CreateAContestant()
         {
@@ -165,6 +175,7 @@ namespace Sweepstakes
 
 
         }
+       
 
 
 
