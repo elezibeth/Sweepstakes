@@ -26,20 +26,28 @@ namespace Sweepstakes
 
 
             Random rand = new Random();
-            List<int> key1 = Enumerable.ToList(dictionary.Keys);
+            
             int size = dictionary.Count;
-            int index = rand.Next(0, size);
-            int winnerKey = key1[index];
+            int index = rand.Next(0, size - 1);
+            List<Contestant> arr = new List<string>();
+            foreach(KeyValuePair<int, Contestant> in dictionary)
+            {
+                arr.Add(Contestant);
+            }
+            Contestant winner = arr[index];
+            int registrationKey = winner.registrationNumber;
+         
+            foreach(KeyValuePair<int, Contestant> contestant in dictionary)
+            {
+                if(contestant.Key == registrationKey)
+                {
+                    return contestant.Value;
+                }
+            }
 
-            Contestant winner = dictionary.//--------------------------------------------------------------------------------too long on this problem
-                
-        
-
-
-
-           
+ 
         }
-        public void PrintContestantInfo(Contestant contestant)
+        public void PrintContestantInfo(Contestant contestant)//static user inteface
         {
             Console.WriteLine($"The winner is {contestant.firstName} {contestant.lastName}." +
                 $"The email of this contestant is {contestant.eMailAddress}." +
