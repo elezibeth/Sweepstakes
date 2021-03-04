@@ -10,6 +10,7 @@ namespace Sweepstakes
     {
         //members
         string[] array;
+        MarketingFirm mktfrm;
 
         public UserInterface()
         {
@@ -31,10 +32,23 @@ namespace Sweepstakes
                 Console.WriteLine(number + " " + item);
                 number++;
             }
-           switch (number)
+            string useriNput = Console.ReadLine();
+           switch (useriNput)
             {
                 case "1":
                     CreateMarketingFirm();
+                    break;
+                case "2":
+                    Console.WriteLine("Create a sweepstakes");
+                    CreateASweepstakes();
+                    break;
+                case "3":
+                    CreateAContestant();
+                    break;
+                default:
+                    Console.WriteLine("Invalid selection");
+                    IntroScreen();
+                    break;
 
             }
 
@@ -46,14 +60,31 @@ namespace Sweepstakes
         {
             Console.WriteLine("Please enter the name of the marketing firm");
             string marketingFirmName = Console.ReadLine();
-            MarketingFirm mktfrm = new MarketingFirm(marketingFirmName);
+            mktfrm = new MarketingFirm(marketingFirmName);
             //save mktfrm;
+           
         }
         public void AddOptionsToArray()
         {
             array[0] = "Create a marketing firm";
+            array[1] = "Create a sweepstakes";
             //array[1]
 
+        }
+        public void CreateASweepstakes()//-------------------------------------------------------------------------------------------------------------------------------
+        {
+            mktgfm.
+        }
+        public void CreateAContestant()
+        {
+            Console.WriteLine("Please enter your first name.");
+            string firstName = Console.ReadLine();
+            Console.WriteLine("Please enter your last name.");
+            string lastName = Console.ReadLine();
+            Console.WriteLine("Please enter your email address.");
+            string eMailAddress = Console.ReadLine();
+            int registrationNumber = eMailAddress.GetHashCode();
+            Contestant contestant = new Contestant(firstName, lastName, eMailAddress, registrationNumber);
         }
 
     }

@@ -17,39 +17,16 @@ namespace Sweepstakes
 
 
 
-        public Contestant()
+        public Contestant(string firstName, string lastName, string eMailAddress, int registrationNumber)
         {
-            GetUserFirstName();
-            GetUserLastName();
-            GetUserEmailAddress();
-            GetRegistrationNumber();
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.eMailAddress = eMailAddress;
+            this.registrationNumber = registrationNumber;
         }
 
         //methods
 
-        public void GetUserFirstName()
-        {
-            Console.WriteLine("Please enter your first name.");
-            firstName = Console.ReadLine();
-            
-
-        }
-        public void GetUserLastName()
-        {
-            Console.WriteLine("Please enter your last name.");
-            lastName = Console.ReadLine();
-            
-        }
-        public void GetUserEmailAddress()
-        {
-            Console.WriteLine("Please enter your email address.");
-            eMailAddress = Console.ReadLine();
-           
-        }
-        public void GetRegistrationNumber()
-        {
-            
-            registrationNumber = eMailAddress.GetHashCode();
-        }
+       
     }
 }
