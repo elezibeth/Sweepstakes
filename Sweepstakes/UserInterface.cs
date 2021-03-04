@@ -112,9 +112,22 @@ namespace Sweepstakes
         {
             Console.WriteLine("Would you like to use the Sweepstakes stack manager or the queue manager? type '1' for stack and '2' for queue.");
             string input = Console.ReadLine();
+            Console.WriteLine("Enter a name");
+            string name = Console.ReadLine();
+
             switch (input)
             {
                 case "1":
+                   
+                    Sweepstakes sweeps = mktfrm.CreateASweepstakes(mktfrm.stack, name);
+                    break;
+                case "2":
+                   
+                    Sweepstakes sweeps = mktfrm.CreateASweepstakes(mktfrm.queue, name);
+                    break;
+                default:
+                    Console.WriteLine("invalid selection");
+                    break;
 
             }
         }
