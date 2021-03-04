@@ -11,6 +11,7 @@ namespace Sweepstakes
         //members
         Dictionary<int, Contestant> dictionary;
         public string nameOfContest;
+        Contestant contestant;
 
         public Sweepstakes(string contestName)
         {
@@ -47,12 +48,7 @@ namespace Sweepstakes
 
  
         }
-        public void PrintContestantInfo(Contestant contestant)//static user inteface
-        {
-            Console.WriteLine($"The winner is {contestant.firstName} {contestant.lastName}." +
-                $"The email of this contestant is {contestant.eMailAddress}." +
-                $"The registration number of this contestant is {contestant.registrationNumber}.);
-        }
+       
         public void RegisterContestant(Contestant contestant)
         {
             dictionary.Add(contestant.registrationNumber, contestant.lastName);

@@ -11,10 +11,12 @@ namespace Sweepstakes
 
         //members
         public string name;
+        List<Contestant> contestants;
 
         //ctr
         public MarketingFirm(string name)
         {
+            contestants = new List<Contestant>();
             this.name = name;
 
         }
@@ -26,6 +28,10 @@ namespace Sweepstakes
         {
             Sweepstakes sweepstakes =  GetSweepstakes(stack);
             return sweepstakes;
+        }
+        public void AddContestant()
+        {
+            contestants.Add(Contestant contestant);
         }
     }
 }
