@@ -37,9 +37,10 @@ namespace Sweepstakes
                 number++;
             }
             string useriNput = Console.ReadLine();
-           switch (useriNput)
+            switch (useriNput)
             {
                 case "1":
+                    Console.WriteLine("Create a marketing firm");
                     CreateMarketingFirm();
                     break;
                 case "2":
@@ -47,10 +48,12 @@ namespace Sweepstakes
                     CreateASweepstakes();
                     break;
                 case "3":
+                    Console.WriteLine("Create a contestant");
                     CreateAContestant();
                     break;
                 case "4":
-
+                    Console.WriteLine("manage a sweepstakes");
+                    ManageSweepstakes();
                     break;
                 default:
                     Console.WriteLine("Invalid selection");
@@ -60,7 +63,7 @@ namespace Sweepstakes
             }
 
 
-            
+
 
         }
         public void CreateMarketingFirm()
@@ -70,19 +73,65 @@ namespace Sweepstakes
             mktfrm = new MarketingFirm(marketingFirmName);
             marketingFirms.Add(mktfrm);
             //save mktfrm;
-           
+
         }
         public void AddOptionsToArray()
         {
             array[0] = "Create a marketing firm";
             array[1] = "Create a sweepstakes";
             array[2] = "Create a contestant";
+            array[3] = "Manage a sweepstakes";
+            array[4] = "";
             //array[1]
+
+        }
+        public void ChooseAWinner()
+        {
+
+            Contestant contestant = mktfrm.sweepstakes[0].PickWinner();
+
+            Console.WriteLine($"The winner is {contestant.firstName} {contestant.lastName}." +
+            $"The email of this contestant is {contestant.eMailAddress}." +
+            $"The registration number of this contestant is {contestant.registrationNumber}.");
+
+
+        }
+        public void RegisterContestant()
+        {
+            Console.WriteLine("Please enter your first name.");
+            string firstName = Console.ReadLine();
+            Console.WriteLine("Please enter your last name.");
+            string lastName = Console.ReadLine();
+            Console.WriteLine("Please enter your email address.");
+            string eMailAddress = Console.ReadLine();
+            int registrationNumber = eMailAddress.GetHashCode();
+            Contestant contestant = new Contestant(firstName, lastName, eMailAddress, registrationNumber);
 
         }
         public void CreateASweepstakes()//-------------------------------------------------------------------------------------------------------------------------------
         {
             mktgfm.
+        }
+        public void ManageSweepstakes()
+        {
+            Console.WriteLine("Choose your Marketing firm from the following list");
+            foreach (MarketingFirm marketingFirm in marketingFirms)
+            {
+                Console.WriteLine($" {(marketingFirm[] + 1)} {marketingFirm.name}");
+            }
+            int number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Please chose from the sweepstakes to manage");
+            foreach (Sweepstakes sweepstakes in marketingFirms[number].sweepstakes)
+            {
+                Console.WriteLine($" {marketingFirms[number].sweepstakes[] + 1} {marketingFirms[number].sweepstakes[].nameOfContest} ");
+            }
+            int number1 = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("What would you like to do?");
+            //Console.WriteLine($" 1.Create a Sweepstakes," +
+            //    $"2. Register a Contestant," +
+            //    $"3. Pick a winner?");
+            marketingFirms[number].sweepstakes[number1].
+
         }
         public void CreateAContestant()
         {
@@ -111,37 +160,25 @@ namespace Sweepstakes
                     contestants.Add(contestant);
                     Console.WriteLine("contestant saved temporarily.");
                     break;
-               
-
 
             }
 
-            foreach (MarketingFirm item in marketingFirms)
-            {
-                Console.WriteLine($"{(marketingFirms[] + 1)} {item}");
-            }
 
-            
-        
-            
-
-                
-        
-            
-        
         }
 
+
+
+    
+    public void ChooseAWinner()
+    {
             
-        
-    }
-        public void ChooseAWinner()
-        {
-          
-                    Console.WriteLine($"The winner is {contestant.firstName} {contestant.lastName}." +
-                    $"The email of this contestant is {contestant.eMailAddress}." +
-                    $"The registration number of this contestant is {contestant.registrationNumber}.);
-        
+        Console.WriteLine($"The winner is {contestant.firstName} {contestant.lastName}." +
+        $"The email of this contestant is {contestant.eMailAddress}." +
+        $"The registration number of this contestant is {contestant.registrationNumber}.);
+
+
         }
 
-    }
+
+}
 }

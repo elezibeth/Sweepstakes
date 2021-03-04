@@ -55,3 +55,11 @@ namespace Sweepstakes
         }
     }
 }
+//(15 points) As a developer, I want to create a Sweepstakes class that uses the Dictionary data structure
+//as an underlying structure. The Sweepstakes class will have the following methods with full
+//implementation (write the functionality) of each method:
+
+//Sweepstakes(string name)
+//- void RegisterContestant(Contestant contestant)
+//- Contestant PickWinner()
+//- void PrintContestantInfo(Contestant contestant)

@@ -14,3 +14,7 @@ namespace Sweepstakes
         
     }
 }
+//(10 points) As a developer, I want to write an ISweepstakesManager interface with the following
+//methods for a sweepstakes management system:
+//-void InsertSweepstakes(Sweepstakes sweepstakes)
+//- Sweepstakes GetSweepstakes()

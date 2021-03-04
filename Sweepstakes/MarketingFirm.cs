@@ -12,10 +12,12 @@ namespace Sweepstakes
         //members
         public string name;
         List<Contestant> contestants;
+        public List<Sweepstakes> sweepstakes;
 
         //ctr
         public MarketingFirm(string name)
         {
+            sweepstakes = new List<Sweepstakes>();
             contestants = new List<Contestant>();
             this.name = name;
 
