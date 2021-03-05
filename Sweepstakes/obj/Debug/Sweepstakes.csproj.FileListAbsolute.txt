@@ -1,2 +1,7 @@
 C:\Users\elezibeth\source\repos\Sweepstakes\Sweepstakes\obj\Debug\Sweepstakes.csprojAssemblyReference.cache
 C:\Users\elezibeth\source\repos\Sweepstakes\Sweepstakes\obj\Debug\Sweepstakes.csproj.CoreCompileInputs.cache
+C:\Users\elezibeth\source\repos\Sweepstakes\Sweepstakes\bin\Debug\Sweepstakes.exe.config
+C:\Users\elezibeth\source\repos\Sweepstakes\Sweepstakes\bin\Debug\Sweepstakes.exe
+C:\Users\elezibeth\source\repos\Sweepstakes\Sweepstakes\bin\Debug\Sweepstakes.pdb
+C:\Users\elezibeth\source\repos\Sweepstakes\Sweepstakes\obj\Debug\Sweepstakes.exe
+C:\Users\elezibeth\source\repos\Sweepstakes\Sweepstakes\obj\Debug\Sweepstakes.pdb

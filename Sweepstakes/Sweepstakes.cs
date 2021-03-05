@@ -39,16 +39,17 @@ namespace Sweepstakes
             Contestant winner = arr[index];
             int registrationKey = winner.registrationNumber;// the registrationKey is a hex value
           
-            foreach(KeyValuePair<int, Contestant> contestant in dictionary)
+            foreach(KeyValuePair<int, Contestant> contestant1 in dictionary)
             { 
-                if(contestant.Key == registrationKey)
+                if(contestant1.Key == registrationKey)
                 {
-                    winner =  contestant.Value;
+                    winner =  contestant1.Value;
+                    
                 }
-                
+                return winner;
                 
             }
-            return winner;
+            
   
         }
    

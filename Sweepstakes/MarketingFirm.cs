@@ -27,7 +27,7 @@ namespace Sweepstakes
             
             this.name = name;
             
-            manager = CreateSweepstakesManager();
+            manager = CreateSweepstakesManager();//factory design implementation - I do not have to choose the sweepstakes manager for the user.
             string sweep = UserInterface.GetUserInputForStringPrompt("Enter the name of the sweepstakes you would like to create");
             CreateASweepstakes(manager, sweep);
 
@@ -40,14 +40,16 @@ namespace Sweepstakes
         //methods
         //add note here about dependency injection: by using dependency injection here, we can 
         //use the marketing firm's stack manager or the marketing firm's queue manager.
-        //I do not have to identify the method by which I insert the sweepstakes into the manager.
+        //I do not have to identify or write the method by which I insert the sweepstakes into the manager.
+        //This benefits potential users by increasing the flexibility of sweepstakes management.
 
         public Sweepstakes CreateASweepstakes(ISweepstakesManager manager, string nameOfSweepStakes)
         {
             
             Sweepstakes sweepstakes1 = new Sweepstakes(nameOfSweepStakes);
             
-            manager.InsertSweepstakes(sweepstakes1);
+            manager.InsertSweepstakes(sweepstakes1);// here, I can call the manager created in the constructor, whithout knowing what kind of manager was instantiated by the user.
+            //the InsertSweepstakes() will call the appropriate method, determined by the choice made by the user.
             Sweepstakes sweep = manager.GetSweepstakes();
             return sweep;
 
