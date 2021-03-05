@@ -43,8 +43,10 @@ namespace Sweepstakes
         //I do not have to identify or write the method by which I insert the sweepstakes into the manager.
         //This benefits potential users by increasing the flexibility of sweepstakes management.
 
-        public Sweepstakes CreateASweepstakes(ISweepstakesManager manager, string nameOfSweepStakes)
+        public Sweepstakes CreateASweepstakes(ISweepstakesManager manager)
         {
+            string prompt = "please enter the name of your sweepstakes.";
+            string nameOfSweepStakes = UserInterface.GetUserInputForStringPrompt(prompt);
             
             Sweepstakes sweepstakes1 = new Sweepstakes(nameOfSweepStakes);
             
