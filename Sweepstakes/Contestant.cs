@@ -28,7 +28,7 @@ namespace Sweepstakes
         //methods
         public void PrintInfo()
         {
-            string input = $"{firstName}, {lastName}, {eMailAddress}, registration number: {registrationNumber}. Press enter to continue.";
+            string input = $"{firstName}, {lastName}, {eMailAddress}, registration number: {registrationNumber}. is the winner. Press enter to continue.";
             UserInterface.GetUserInputForStringPrompt(input);
         }
 

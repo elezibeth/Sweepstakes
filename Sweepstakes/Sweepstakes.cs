@@ -46,10 +46,10 @@ namespace Sweepstakes
                     winner =  contestant1.Value;
                     
                 }
-                return winner;
+                
                 
             }
-            
+            return winner;
   
         }
    

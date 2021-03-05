@@ -28,8 +28,8 @@ namespace Sweepstakes
             this.name = name;
             
             manager = CreateSweepstakesManager();//factory design implementation - I do not have to choose the sweepstakes manager for the user.
-            string sweep = UserInterface.GetUserInputForStringPrompt("Enter the name of the sweepstakes you would like to create");
-            CreateASweepstakes(manager, sweep);
+           
+            
 
             
             
