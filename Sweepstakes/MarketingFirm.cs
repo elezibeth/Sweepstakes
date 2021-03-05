@@ -43,7 +43,7 @@ namespace Sweepstakes
         //I do not have to identify or write the method by which I insert the sweepstakes into the manager.
         //This benefits potential users by increasing the flexibility of sweepstakes management.
 
-        public Sweepstakes CreateASweepstakes(ISweepstakesManager manager)
+        public void CreateASweepstakes(ISweepstakesManager manager)
         {
             string prompt = "please enter the name of your sweepstakes.";
             string nameOfSweepStakes = UserInterface.GetUserInputForStringPrompt(prompt);
@@ -52,10 +52,15 @@ namespace Sweepstakes
             
             manager.InsertSweepstakes(sweepstakes1);// here, I can call the manager created in the constructor, whithout knowing what kind of manager was instantiated by the user.
             //the InsertSweepstakes() will call the appropriate method, determined by the choice made by the user.
-            Sweepstakes sweep = manager.GetSweepstakes();
-            return sweep;
+            
+            
 
         
+        }
+        public Sweepstakes GetSweepstakes(ISweepstakesManager manager)
+        {
+            Sweepstakes sweep = manager.GetSweepstakes();
+            return sweep;
         }
         public Contestant GetContestantInformation()
         {

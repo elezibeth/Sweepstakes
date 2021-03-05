@@ -32,10 +32,11 @@ namespace Sweepstakes
         }
         public void Run()
         {
-            Sweepstakes sweep =  mktfrm.CreateASweepstakes(mktfrm.manager);
+            mktfrm.CreateASweepstakes(mktfrm.manager);
             Contestant con1 = mktfrm.GetContestantInformation();
             Contestant con2 = mktfrm.GetContestantInformation();
             Contestant con3 = mktfrm.GetContestantInformation();
+            Sweepstakes sweep = mktfrm.GetSweepstakes(mktfrm.manager);
             sweep.RegisterContestant(con1);
             sweep.RegisterContestant(con2);
             sweep.RegisterContestant(con3);
