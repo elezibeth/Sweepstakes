@@ -13,14 +13,19 @@ namespace Sweepstakes
         public string nameOfContest;
        
 
-        public Sweepstakes(string contestName)
+        public Sweepstakes()
         {
-            nameOfContest = contestName;
+            nameOfContest = GetName();
             dictionary = new Dictionary<int, Contestant>();
             
 
         }
-
+        public string GetName()
+        {
+            string text = "please enter the name of your contest";
+            string userInput = UserInterface.GetUserInputForStringPrompt(text);
+            return userInput;
+        }
         //methods
         public Contestant PickWinner()
         {

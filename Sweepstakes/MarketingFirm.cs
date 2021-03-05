@@ -45,10 +45,9 @@ namespace Sweepstakes
 
         public void CreateASweepstakes(ISweepstakesManager manager)
         {
-            string prompt = "please enter the name of your sweepstakes.";
-            string nameOfSweepStakes = UserInterface.GetUserInputForStringPrompt(prompt);
+           
             
-            Sweepstakes sweepstakes1 = new Sweepstakes(nameOfSweepStakes);
+            Sweepstakes sweepstakes1 = new Sweepstakes();
             
             manager.InsertSweepstakes(sweepstakes1);// here, I can call the manager created in the constructor, whithout knowing what kind of manager was instantiated by the user.
             //the InsertSweepstakes() will call the appropriate method, determined by the choice made by the user.
