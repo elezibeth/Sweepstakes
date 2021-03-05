@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    class Contestant
+    public class Contestant
     {
         //member variables
         public string firstName;
@@ -26,7 +26,11 @@ namespace Sweepstakes
         }
 
         //methods
+        public void PrintInfo()
+        {
+            string input = $"{firstName}, {lastName}, {eMailAddress}, registration number: {registrationNumber}. Press enter to continue.";
+            UserInterface.GetUserInputForStringPrompt(input);
+        }
 
-       
     }
 }

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    class Sweepstakes
+    public class Sweepstakes
     {
         //members
         Dictionary<int, Contestant> dictionary;
         public string nameOfContest;
-        Contestant contestant;
+       
 
         public Sweepstakes(string contestName)
         {
@@ -27,31 +27,40 @@ namespace Sweepstakes
 
 
             Random rand = new Random();
-            
+          
             int size = dictionary.Count;
             int index = rand.Next(0, size - 1);
-            List<Contestant> arr = new List<string>();
-            foreach(KeyValuePair<int, Contestant> in dictionary)
-            {
-                arr.Add(Contestant);
-            }
-            Contestant winner = arr[index];
-            int registrationKey = winner.registrationNumber;
-         
+
+            List<Contestant> arr = new List<Contestant>();//int keys are hex. Very difficult to choose random item from a dictionary. Also, this logic of assigning numbers 0-x would return problems if multiple contestants were registered to multiple sweepstakes.
             foreach(KeyValuePair<int, Contestant> contestant in dictionary)
             {
+                arr.Add(contestant.Value);//here we identify the contestant randomly by putting each on a list.
+            }
+            Contestant winner = arr[index];
+            int registrationKey = winner.registrationNumber;// the registrationKey is a hex value
+          
+            foreach(KeyValuePair<int, Contestant> contestant in dictionary)
+            { 
                 if(contestant.Key == registrationKey)
                 {
-                    return contestant.Value;
+                    winner =  contestant.Value;
                 }
+                
+                
             }
-
- 
+            return winner;
+  
         }
+   
        
         public void RegisterContestant(Contestant contestant)
         {
-            dictionary.Add(contestant.registrationNumber, contestant.lastName);
+            
+            dictionary.Add(contestant.registrationNumber, contestant);
+        }
+        public void PrintContestantInfo(Contestant contestant)
+        {
+            contestant.PrintInfo();
         }
     }
 }

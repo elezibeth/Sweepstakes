@@ -6,25 +6,30 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    class MarketingFirm
+    public class MarketingFirm
     {
 
         //members
         public string name;
-        List<Contestant> contestants;
-        public List<Sweepstakes> sweepstakes;
-        public  SweepstakesStackManager stack;
-        public SweepstakesQueueManager queue;
         
+        
+        public SweepstakesStackManager stack;
+        public SweepstakesQueueManager queue;
+        public ISweepstakesManager manager;
+        
+       
+       
 
         //ctr
         public MarketingFirm(string name)
         {
-            sweepstakes = new List<Sweepstakes>();
-            contestants = new List<Contestant>();
+            
+            
             this.name = name;
-            stack = new SweepstakesStackManager("stack");
-            queue = new SweepstakesQueueManager("queue");
+            
+            manager = CreateSweepstakesManager();
+            string sweep = UserInterface.GetUserInputForStringPrompt("Enter the name of the sweepstakes you would like to create");
+            CreateASweepstakes(manager, sweep);
 
             
             
@@ -37,22 +42,56 @@ namespace Sweepstakes
         //use the marketing firm's stack manager or the marketing firm's queue manager.
         //I do not have to identify the method by which I insert the sweepstakes into the manager.
 
-        public Sweepstakes CreateASweepstakes(ISweepstakesManager manager, string nameOfSweeStakes)
+        public Sweepstakes CreateASweepstakes(ISweepstakesManager manager, string nameOfSweepStakes)
         {
-
+            
             Sweepstakes sweepstakes1 = new Sweepstakes(nameOfSweepStakes);
-            sweepstakes.Add(sweepstakes1);
+            
             manager.InsertSweepstakes(sweepstakes1);
             Sweepstakes sweep = manager.GetSweepstakes();
             return sweep;
 
         
         }
-   
-        public void AddContestant(Sweepstakes sweepstakes, Contestant contestant)
+        public Contestant GetContestantInformation()
+        {
+            string prompt1 = "Please enter your first name.";
+            string firstName = UserInterface.GetUserInputForStringPrompt(prompt1);
+            string prompt2 = "Please enter your last name.";
+            string lastName = UserInterface.GetUserInputForStringPrompt(prompt2);
+            string prompt3 = "Please enter your email address.";
+            string eMailAddress = UserInterface.GetUserInputForStringPrompt(prompt3);
+            int registrationNumber = eMailAddress.GetHashCode();
+            Contestant contestant = new Contestant(firstName, lastName, eMailAddress, registrationNumber);
+            return contestant;
+
+        }
+    
+
+         public void AddContestant(Sweepstakes sweepstakes, Contestant contestant)
         {
             sweepstakes.RegisterContestant(contestant);
         }
+        public ISweepstakesManager CreateSweepstakesManager()
+        {
+            string prompt = "would you like a stack or queue manager? type 'stack' for stack, any other entry will return a queue.";
+            string userInput = UserInterface.GetUserInputForStringPrompt(prompt);
+            switch (userInput)
+            {
+                case "stack":
+                    stack = new SweepstakesStackManager("stack");
+                    return stack;
+                    break;
+                
+                default:
+                    queue = new SweepstakesQueueManager("queue");
+                    return queue;
+                    break;
+                    
+                    
+            }
+        }
+
         
     }
 }
